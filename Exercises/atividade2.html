@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular valor de produtos</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#calcular").click(function () {
+                const valorP = parseFloat($("#vP").val())
+                const quant = parseFloat($("#qP").val())
+                const desc = parseFloat($("#dP").val())
+
+                const valor = (valorP * quant) * (1 - desc / 100)
+                alert("O " + $("#nomeProduto").val() + " sai por " + valor.toFixed(2) + " com " + desc + "% de desconto")
+            })
+        })
+    </script>
+</head>
+
+<body>
+    Produtos: <input type="text" id="nomeProduto"><br>
+    Valor: <input type="text" id="vP"><br>
+    Quantidade: <input type="text" id="qP"><br>
+    Desconto: <input type="text" id="dP"><br>
+    <input type="button" value="Calcular" id="calcular">
+
+</body>
+
+</html>

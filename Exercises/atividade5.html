@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                var city = "Salvador"
+                $.ajax({
+                    type: "GET",
+                    url: "http://worldclockapi.com/api/jsonp/utc/now",
+                    timeout: 3000,
+                    dataType: 'jsonp',
+                    cache: false,
+                    beforeSend: function () {
+                        $("#hora").html("Carregando..."); //Carregando
+                    },
+                    error: function () {
+                        $("#hora").html("ERRO!");
+                    },
+                    success: function (res) {
+                        $("#resultado").html(res.currentDateTime)
+                        var hoje = new Date(res.currentDateTime)
+                        var hora = hoje.getHours();
+                        var imagem = "";
+                        if (hora < 6 || hora > 18) {
+                            imagem = "<img src='../assets/noite.png' align='left'>"
+                        } else {
+                            imagem = "<img src='../assets/dia.jpg' align='left'>";
+                            ;
+                        } $("#resultado").html(hoje + imagem)
+                    },
+                })
+            })
+        })
+    </script>
+    <title>Hora</title>
+</head>
+
+<body>
+    <input type="button" id="btn" value="Obter Data e Hora Atuais">
+    <div id="resultado"></div>
+
+</body>
+
+</html>

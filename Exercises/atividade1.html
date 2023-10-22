@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular média</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#calcular").click(function () {
+                const media = (parseFloat($("#v1").val()) +
+                    parseFloat($("#v1").val()) +
+                    parseFloat($("#v1").val()) +
+                    parseFloat($("#v1").val())) / 4
+                alert("A média é " + media)
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">Calcular Média</h1>
+    valor 1: <input type="text" name="" id="v1"><br>
+    valor 2: <input type="text" name="" id="v2"><br>
+    valor 3: <input type="text" name="" id="v3"><br>
+    valor 4: <input type="text" name="" id="v4"><br>
+    <input type="button" id="calcular" value="Calcular">
+</body>
+
+</html>

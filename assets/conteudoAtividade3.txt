@@ -1,0 +1,1 @@
+Um dos motivos que atraem tanta gente a utilizar o jQuery é a facilidade com que os comandos podem ser criados. Algumas operações podem ser executadas com apenas uma linha de código, mostrando como a biblioteca é fiel ao seu lema, “write less, do more.”

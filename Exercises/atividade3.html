@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textos</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#s1").click(function () {
+                $.ajax({
+                    url: "../assets/conteudoAtividade3.txt", success: function (res) {
+                        $("#info1").html(res)
+                    }
+                })
+
+            });
+            $("#s2").click(function () {
+                $.ajax({
+                    url: "../assets/conteudoAtividade3.2.txt", success: function (res) {
+                        $("#info2").html(res)
+                    }
+                })
+            });
+
+        })
+    </script>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #info1 {
+            color: blue;
+            font-size: 15px;
+            text-align: right;
+
+        }
+
+        #info2 {
+            color: green;
+            text-align: left;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>A razões para começar a estudar jQuery</h1>
+    <h2 id="s1">Primeira razão!</h2>
+    <div id="info1"></div>
+    <h2 id="s2">Segunda razão!</h2>
+    <div id="info2"></div>
+</body>
+
+</html>
